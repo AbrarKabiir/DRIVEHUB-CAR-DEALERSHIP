@@ -21,7 +21,7 @@ Database settings live in `models/dbConnect.php`.
 |------------------------ |---------------------| ------------------ 
 |   admin@drivehub.com    |   Admin@123         | Admin
 |   employee@drivehub.com |   Employee@123      | Employee
-|   Customer@drivehub.com |   Customer@123      | Customer
+|   customer@drivehub.com |   Customer@123      | Customer
 
 Security answers (lowercase): `buddy`, `malmo`, `dune`.
 
