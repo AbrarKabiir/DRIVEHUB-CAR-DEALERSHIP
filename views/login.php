@@ -46,8 +46,18 @@
                 </div>
 
                 <div class="title">Welcome back</div>
+
                 <div class="subtitle">
                     Customers, Employees and Admins use the same login.
+                </div>
+
+                <div class="error-text">
+                    <?php
+                        if(isset($_GET["loginErr"]))
+                        {
+                            echo htmlspecialchars($_GET["loginErr"]);
+                        }
+                    ?>
                 </div>
 
                 <form action="../controllers/loginControls.php" method="post">
@@ -55,7 +65,7 @@
                     <div class="form-group">
                         <label for="email" class="form-label">Email Address</label>
 
-                        <input type="text" class="input" id="email" name="email" placeholder="you@example.com">
+                        <input type="email" class="input" id="email" name="email" placeholder="you@example.com">
 
                         <span class="error-text">
                             <?php
