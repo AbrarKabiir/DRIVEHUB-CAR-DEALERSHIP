@@ -2,15 +2,19 @@
 <html>
 
 <head>
+
     <title>Set a New Password - DriveHub</title>
     <link rel="stylesheet" href="css/reset.css">
     <script src="js/index.js" defer></script>
+
 </head>
 
 <body>
+
     <div class="resetPage">
 
         <div class="page-left">
+
             <div class="logo">
                 <div class="logo-emoji">&#128663;</div>
                 <div class="logo-text">DRIVE<span>HUB</span></div>
@@ -29,9 +33,11 @@
             </div>
 
             <div class="copyright">&copy; 2026 DriveHub. All rights reserved.</div>
+
         </div>
 
         <div class="page-right">
+
             <div class="form-box">
 
                 <a href="login.php" class="backPage"><b><- Back to Sign In </b></a>
@@ -43,6 +49,7 @@
                 <form action="../controllers/forgotPasswordControls.php?action=reset" method="post">
 
                     <div class="group">
+
                         <label for="newPassword">New Password</label>
 
                         <div class="pass-wrap">
@@ -51,13 +58,18 @@
                         </div>
 
                         <span class="error-text">
+
                             <?php
+
                                 if(isset($_GET["newPasswordErr"]))
                                 {
                                     echo htmlspecialchars($_GET["newPasswordErr"]);
                                 }
+
                             ?>
+
                         </span>
+
                     </div>
 
                     <div class="form-group">
@@ -70,23 +82,28 @@
                         </div>
 
                         <span class="error-text">
+
                             <?php
                                 if(isset($_GET["conPasswordErr"]))
                                 {
                                     echo htmlspecialchars($_GET["conPasswordErr"]);
                                 }
                             ?>
+
                         </span>
                         
                     </div>
 
                     <input type="submit" class="btn btn-primary btn-block" name="submit" value="Update Password">
+
                 </form>
 
             </div>
+
         </div>
 
     </div>
+    
 </body>
 
 </html>

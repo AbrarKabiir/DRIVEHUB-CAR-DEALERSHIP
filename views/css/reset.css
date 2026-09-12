@@ -68,7 +68,6 @@ body {
     font-size: 54px;
     font-weight: 800;
     line-height: 1.05;
-    letter-spacing: -1.5px;
     color: #ffffff;
     margin-bottom: 20px;
 }
@@ -108,7 +107,6 @@ body {
 .title {
     font-size: 30px;
     font-weight: 800;
-    letter-spacing: -0.5px;
     color: #ffffff;
 }
 
@@ -139,7 +137,6 @@ body {
     padding: 12px 14px;
     color: #f4f4f5;
     font-size: 14px;
-    font-family: inherit;
 }
 
 .pass-wrap {
@@ -158,7 +155,6 @@ body {
     border: none;
     color: #a1a1aa;
     font-size: 13px;
-    font-family: inherit;
     cursor: pointer;
 }
 
@@ -175,10 +171,9 @@ body {
     display: inline-block;
     padding: 11px 20px;
     border-radius: 10px;
-    border: 1px solid transparent;
+    border: 1px solid;
     font-size: 14px;
     font-weight: 700;
-    font-family: inherit;
     cursor: pointer;
     text-decoration: none;
     text-align: center;
