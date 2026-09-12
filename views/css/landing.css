@@ -13,10 +13,24 @@ body {
     background-blend-mode: darken;
 }
 
-
-/* ---------------- logo ---------------- */
-
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-emoji {
+    width: 34px;
+    height: 34px;
+    background-color: #f59e0b;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.logo-text {
     font-size: 20px;
     font-weight: 800;
     letter-spacing: 0.5px;
@@ -25,12 +39,9 @@ body {
     gap: 0;
 }
 
-.sc {
+.logo-text2 {
     color: #f59e0b;
 }
-
-
-/* ---------------- buttons ---------------- */
 
 .btnsign {
     display: inline-block;
@@ -41,7 +52,6 @@ body {
     color: #ffffff;
     font-size: 14px;
     font-weight: 700;
-    font-family: inherit;
     cursor: pointer;
     text-decoration: none;
     text-align: center;
@@ -51,12 +61,10 @@ body {
     display: inline-block;
     padding: 9px 16px;
     border-radius: 10px;
-    border: 1px solid #f59e0b;
     background-color: #f59e0b;
     color: #111113;
     font-size: 14px;
     font-weight: 700;
-    font-family: inherit;
     cursor: pointer;
     text-decoration: none;
     text-align: center;
@@ -66,12 +74,10 @@ body {
     display: inline-block;
     padding: 14px 30px;
     border-radius: 10px;
-    border: 1px solid #27272a;
     background-color: #151516;
     color: #ffffff;
     font-size: 15px;
     font-weight: 700;
-    font-family: inherit;
     cursor: pointer;
     text-decoration: none;
     text-align: center;
@@ -81,12 +87,10 @@ body {
     display: inline-block;
     padding: 14px 30px;
     border-radius: 10px;
-    border: 1px solid #f59e0b;
     background-color: #f59e0b;
     color: #111113;
     font-size: 15px;
     font-weight: 700;
-    font-family: inherit;
     cursor: pointer;
     text-decoration: none;
     text-align: center;
@@ -108,9 +112,6 @@ body {
     background-color: #fbbf24;
 }
 
-
-/* ---------------- navigation ---------------- */
-
 .nav {
     height: 65px;
     background-color: #111113;
@@ -126,11 +127,7 @@ body {
     gap: 10px;
 }
 
-
-/* ---------------- hero section ---------------- */
-
 .hero {
-    max-width: 1100px;
     margin: 0 auto;
     padding: 90px 40px 40px 40px;
     text-align: center;
@@ -149,7 +146,6 @@ body {
     font-size: 60px;
     font-weight: 800;
     line-height: 1.05;
-    letter-spacing: -1.5px;
     color: #ffffff;
     margin-bottom: 20px;
 }
@@ -191,7 +187,7 @@ body {
     color: #a1a1aa;
 }
 
-.feature-grid {
+.features {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 22px;
