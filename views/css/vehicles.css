@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    }
+  }
   
   body {
   background-color: #09090b;
@@ -16,23 +16,35 @@
   color: #f59e0b;
   text-decoration: none;
   }
+
+  .topnav {
+    height: 72px;
+    background-color: #111113;
+    border-bottom: 1px solid #1f1f23;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+
+.navleft {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.navlinks {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navright {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
  
-  .navbar {
-  height: 72px;
-  background-color: #111113;
-  border-bottom: 1px solid #1f1f23;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-  }
-  
-  .nav-left {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  }
-  
   .logo {
   display: flex;
   align-items: center;
@@ -61,38 +73,38 @@
   color: #f59e0b;
   }
   
-  .nav-links {
+  .navlinks {
   display: flex;
   align-items: center;
   gap: 8px;
   }
   
-  .nav-links a {
+  .navlinks a {
   color: #a1a1aa;
   font-size: 15px;
   padding: 8px 14px;
   border-radius: 8px;
   }
   
-  .nav-links a.active {
+  .navlinks a.active {
   color: #f59e0b;
   background-color: #271f12;
   }
   
-  .nav-right {
+  .navright {
   display: flex;
   align-items: center;
   gap: 14px;
   }
   
-  .user-name {
+  .username {
   font-size: 14px;
   font-weight: 700;
   color: #f4f4f5;
   text-align: right;
   }
   
-  .user-role {
+  .userrole {
   font-size: 12px;
   color: #71717a;
   text-align: right;
@@ -102,7 +114,7 @@
   display: inline-block;
   padding: 11px 20px;
   border-radius: 10px;
-  border: 1px solid transparent;
+  border: 1px solid;
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
@@ -123,6 +135,12 @@
   padding: 7px 14px;
   font-size: 13px;
   }
+
+  .btn-secondary {
+    border-color: #27272a;
+    color: #f4f4f5;
+    background-color: #18181b;
+}
   
   .container {
   max-width: 1200px;
@@ -157,8 +175,7 @@
   margin-bottom: 20px;
   }
   
-  .filter-bar .input,
-  .filter-bar .select {
+  .filter-bar .input, .filter-bar .select {
   width: auto;
   background-color: #18181b;
   border: 1px solid #27272a;
