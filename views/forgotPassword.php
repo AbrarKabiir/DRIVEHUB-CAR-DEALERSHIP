@@ -2,8 +2,10 @@
 <html>
 
 <head>
+
     <title>Forgot Password - DriveHub</title>
     <link rel="stylesheet" href="css/forgot.css">
+
 </head>
 
 <body>
@@ -30,9 +32,11 @@
             </div>
 
             <div class="copyright">&copy; 2026 DriveHub. All rights reserved.</div>
+
         </div>
 
         <div class="page-right">
+            
             <div class="form-box">
 
                 <a href="login.php" class="backPage"><b><- Back to Sign In</b></a>
@@ -44,28 +48,35 @@
                 </div>
 
                 <?php
-                    if(isset($_GET["verifyErr"]) && $_GET["verifyErr"]!="")
+
+                    if(isset($_GET["verifyErr"]))
                     {
                         echo '<div class="alert alert-error">'.htmlspecialchars($_GET["verifyErr"]).'</div>';
                     }
+                    
                 ?>
 
                 <form action="../controllers/forgotPasswordControls.php?action=verify" method="post">
 
                     <div class="group">
+
                         <label for="email">Email Address</label>
-                        <input type="text" class="input" id="email" name="email" placeholder="you@example.com">
+                        <input type="email" class="input" id="email" name="email" placeholder="you@example.com">
+
                         <span class="error-text">
+
                             <?php
                                 if(isset($_GET["emailErr"]))
                                 {
                                     echo htmlspecialchars($_GET["emailErr"]);
                                 }
                             ?>
+
                         </span>
                     </div>
 
                     <div class="group">
+
                         <label for="securityQuestion">Security Question</label>
 
                         <select class="select" id="securityQuestion" name="securityQuestion">
@@ -76,29 +87,37 @@
                         </select>
                         
                         <span class="error-text">
+
                             <?php
                                 if(isset($_GET["securityQuestionErr"]))
                                 {
                                     echo htmlspecialchars($_GET["securityQuestionErr"]);
                                 }
                             ?>
+
                         </span>
+
                     </div>
 
                     <div class="group">
+
                         <label for="securityAnswer">Your Answer</label>
                         <input type="text" class="input" id="securityAnswer" name="securityAnswer" placeholder="Type your answer...">
+
                         <span class="error-text">
+
                             <?php
                                 if(isset($_GET["securityAnswerErr"]))
                                 {
                                     echo htmlspecialchars($_GET["securityAnswerErr"]);
                                 }
                             ?>
+
                         </span>
                     </div>
 
-                    <input type="submit" class="btn btn-primary btn-block" name="submit" value="Verify &amp; Continue">
+                    <input type="submit" class="btn btn-primary btn-block" name="submit" value="Verify and Continue">
+
                 </form>
 
             </div>
