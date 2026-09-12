@@ -13,8 +13,6 @@
     $keyword="";
     $availability="";
     $sort="priceLow";
-    $brand="";
-    $maxPrice="";
 
     if(isset($_GET["keyword"]))
     {
@@ -32,8 +30,6 @@
     }
 
     $cars=getCars($keyword, $availability, $sort);
-
-    $allCars=getAllCars();
 
 ?>
 
@@ -62,8 +58,8 @@
             <div class="navlinks">
 
                 <a href="vehicles.php" class="active">Vehicles</a>
-                <a href="customer/customerDashboard.php">My Dashboard</a>
-                <a href="account/profile.php">Profile</a>
+                <a href="customerDashboard.php">My Dashboard</a>
+                <a href="profile.php">Profile</a>
 
             </div>
 
@@ -106,7 +102,7 @@
 
             if(isset($_GET["success"]) && $_GET["success"]!="")
             {
-                echo '<div class="alert alert-success">'.htmlspecialchars($_GET["success"]).'</div>';
+                echo '<div>'.htmlspecialchars($_GET["success"]).'</div>';
             }
 
         ?>
@@ -115,7 +111,7 @@
 
             <div class="filter-bar">
 
-                <input type="text" class="input filter-search" name="keyword" placeholder="Search by brand or model..."value="<?php echo htmlspecialchars($keyword); ?>">
+                <input type="text" class="input filter-search" name="keyword" placeholder="Search by brand or model..." value="<?php echo htmlspecialchars($keyword); ?>">
 
 
                 <select class="select" name="availability">
@@ -166,7 +162,7 @@
 
                 if(count($cars)==0)
                 {
-                    echo '<p class="empty-row">No vehicles match your search.</p>';
+                    echo '<p>No vehicles match your search.</p>';
                 }
 
                 foreach($cars as $car)
@@ -182,7 +178,7 @@
 
                                 if($car["image"]!="")
                                 {
-                                    echo '<img src="../uploads/'.htmlspecialchars($car["image"]).'" alt="'.htmlspecialchars($car["model"]).'">';
+                                    echo '<img src="../images/'.htmlspecialchars($car["image"]).'" alt="'.htmlspecialchars($car["model"]).'">';
                                 }
                                 else
                                 {
@@ -192,12 +188,8 @@
                                 if($car["availability_status"]=="sold")
                                 {
                                     echo '<div class="sold-stamp">SOLD</div>';
-                                    echo '<span class="badge badge-sold">Sold</span>';
                                 }
-                                else
-                                {
-                                    echo '<span class="badge badge-available">Available</span>';
-                                }
+
 
                             ?>
 
