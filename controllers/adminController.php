@@ -1,4 +1,13 @@
 <?php
+
+session_start();
+
+if(!isset($_SESSION["userId"]) || $_SESSION["role"]!="admin")
+{
+    header("Location: login.php");
+    exit();
+}
+
 require_once "../models/adminModel.php";
 
 if (isset($_GET['action']) && isset($_GET['id'])) {
@@ -105,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'])) {
         $name = $_POST['name'] ?? '';
         $email = $_POST['email'] ?? '';
         $phone = $_POST['phone'] ?? '';
-        updateUserProfile($id, $name, $email, $phone);
+        adminUpdateUserProfile($id, $name, $email, $phone);
         header("Location: ../views/admin_profile.php?msg=profile_updated");
         exit();
     }
@@ -114,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'])) {
         $id = $_POST['id'] ?? '';
         $newPassword = $_POST['new_password'] ?? '';
         if (!empty($newPassword)) {
-            updateUserPassword($id, $newPassword);
+            adminUpdateUserPassword($id, $newPassword);
             header("Location: ../views/admin_profile.php?msg=password_updated");
         } else {
             header("Location: ../views/admin_profile.php");

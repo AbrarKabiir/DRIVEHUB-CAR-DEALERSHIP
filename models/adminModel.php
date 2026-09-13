@@ -159,7 +159,7 @@ function getUserProfile($id) {
     return null;
 }
 
-function updateUserProfile($id, $name, $email, $phone) {
+function adminUpdateUserProfile($id, $name, $email, $phone) {
     $conn = dbConnection();
     if($conn) {
         $sql = "UPDATE users SET name=?, email=?, phone=? WHERE user_id=?";
@@ -172,7 +172,7 @@ function updateUserProfile($id, $name, $email, $phone) {
     return false;
 }
 
-function updateUserPassword($id, $newPlainPassword) {
+function adminUpdateUserPassword($id, $newPlainPassword) {
     $conn = dbConnection();
     if($conn) {
         $hashedPassword = password_hash($newPlainPassword, PASSWORD_DEFAULT);

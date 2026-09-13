@@ -15,10 +15,14 @@
 
         <div class="login-left">
 
-            <div class="logo">
-                <div class="logo-emoji">&#128663;</div>
-                <div class="logo-text">DRIVE<span class="logo-text2">HUB</span></div>
-            </div>
+            <a class="homepage" href="landing.php">
+
+                 <div class="logo">
+                    <div class="logo-emoji">&#128663;</div>
+                    <div class="logo-text">DRIVE<span class="logo-text2">HUB</span></div>
+                </div>
+
+            </a>
 
             <div>
                 <div class="tagline">PREMIUM AUTOMOTIVE</div>
@@ -46,23 +50,23 @@
                 </div>
 
                 <div class="title">Welcome back</div>
-                <div class="subtitle">
-                    Customers, Employees and Admins use the same login.
-                </div>
+                <br>
 
                 <form action="../controllers/loginControls.php" method="post">
 
                     <div class="form-group">
                         <label for="email" class="form-label">Email Address</label>
 
-                        <input type="text" class="input" id="email" name="email" placeholder="you@example.com">
+                        <input type="email" class="input" id="email" name="email" placeholder="you@example.com">
 
                         <span class="error-text">
+
                             <?php
                             if (isset($_GET["emailErr"])) {
                                 echo htmlspecialchars($_GET["emailErr"]);
                             }
                             ?>
+                            
                         </span>
                     </div>
 
@@ -79,16 +83,28 @@
                         </div>
 
                         <span class="error-text">
+
                             <?php
                             if (isset($_GET["passwordErr"])) {
                                 echo htmlspecialchars($_GET["passwordErr"]);
                             }
                             ?>
+
+                        </span>
+
+                        <span class="error-text">
+
+                            <?php
+                            if (isset($_GET["loginErr"])) {
+                                echo htmlspecialchars($_GET["loginErr"]);
+                            }
+                            ?>
+
                         </span>
 
                     </div>
 
-                    <div class="auth-row">
+                    <div class="forgotPass">
                         <span></span>
                         <a href="forgotPassword.php" class="forgot">Forgot password?</a>
                     </div>
@@ -98,7 +114,7 @@
                 </form>
 
                 <div class="footer">
-                    New customer? <a href="register.php" class="create-link">Create an account</a>
+                    New customer? <a href="register.php" class="register">Create an account</a>
                 </div>
 
             </div>
@@ -108,4 +124,5 @@
     </div>
 
 </body>
+
 </html>
