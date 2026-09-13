@@ -1,20 +1,19 @@
 <?php
 
-mysqli_report(MYSQLI_REPORT_OFF);
 
-$serverName = "localhost";
-$userName = "root";
-$password = "";
-$db = "dh";
+$dbServerName="localhost";
+$dbUserName="root";
+$dbPassword="";
+$dbName="dh";
 
 function dbConnection()
 {
-    global $serverName;
-    global $userName;
-    global $password;
-    global $db;
+    global $dbServerName;
+    global $dbUserName;
+    global $dbPassword;
+    global $dbName;
 
-    $conn = @mysqli_connect($serverName, $userName, $password, $db);
+    $conn = mysqli_connect($dbServerName, $dbUserName, $dbPassword, $dbName);
 
     if($conn)
     {

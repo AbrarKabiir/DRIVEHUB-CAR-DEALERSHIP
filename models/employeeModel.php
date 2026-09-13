@@ -1,5 +1,5 @@
 <?php
-require_once "DbConnect.php";
+require_once "dbConnect.php";
 
 function getOverviewStats()
 {
@@ -251,24 +251,32 @@ function updateSale($id, $customer, $vehicle, $saleDate, $amount, $status)
     $conn = dbConnection();
     $customerId = 0;
     $carId = 0;
-    $result = mysqli_query($conn, "SELECT user_id FROM users WHERE name='$customer'");
-    if(mysqli_num_rows($result) > 0)
+    $stmt1 = mysqli_prepare($conn, "SELECT user_id FROM users WHERE name=?");
+    mysqli_stmt_bind_param($stmt1, 's', $customer);
+    mysqli_stmt_execute($stmt1);
+    $result1 = mysqli_stmt_get_result($stmt1);
+    if(mysqli_num_rows($result1) > 0)
     {
-        $row = mysqli_fetch_assoc($result);
+        $row = mysqli_fetch_assoc($result1);
         $customerId = $row['user_id'];
     }
     else
     {
         $email = $customer . "@gmail.com";
         $password = "123456";
-        $sql = "INSERT INTO users (name, email, password, role, account_status) VALUES ('$customer', '$email', '$password', 'customer', 'active')";
-        mysqli_query($conn, $sql);
+        $sql = "INSERT INTO users (name, email, password, role, account_status) VALUES (?, ?, ?, 'customer', 'active')";
+        $stmt_insert = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt_insert, 'sss', $customer, $email, $password);
+        mysqli_stmt_execute($stmt_insert);
         $customerId = mysqli_insert_id($conn);
     }
-    $result = mysqli_query($conn, "SELECT car_id FROM cars WHERE CONCAT(brand, ' ', model)='$vehicle'");
-    if(mysqli_num_rows($result) > 0)
+    $stmt2 = mysqli_prepare($conn, "SELECT car_id FROM cars WHERE CONCAT(brand, ' ', model)=?");
+    mysqli_stmt_bind_param($stmt2, 's', $vehicle);
+    mysqli_stmt_execute($stmt2);
+    $result2 = mysqli_stmt_get_result($stmt2);
+    if(mysqli_num_rows($result2) > 0)
     {
-        $row = mysqli_fetch_assoc($result);
+        $row = mysqli_fetch_assoc($result2);
         $carId = $row['car_id'];
     }
     $status = strtolower($status);
@@ -312,24 +320,32 @@ function insertSale($customer, $vehicle, $saleDate, $amount, $status, $employeeI
     $conn = dbConnection();
     $customerId = 0;
     $carId = 0;
-    $result = mysqli_query($conn, "SELECT user_id FROM users WHERE name='$customer'");
-    if(mysqli_num_rows($result) > 0)
+    $stmt1 = mysqli_prepare($conn, "SELECT user_id FROM users WHERE name=?");
+    mysqli_stmt_bind_param($stmt1, 's', $customer);
+    mysqli_stmt_execute($stmt1);
+    $result1 = mysqli_stmt_get_result($stmt1);
+    if(mysqli_num_rows($result1) > 0)
     {
-        $row = mysqli_fetch_assoc($result);
+        $row = mysqli_fetch_assoc($result1);
         $customerId = $row['user_id'];
     }
     else
     {
         $email = $customer . "@gmail.com";
         $password = "123456";
-        $sql = "INSERT INTO users (name, email, password, role, account_status) VALUES ('$customer', '$email', '$password', 'customer', 'active')";
-        mysqli_query($conn, $sql);
+        $sql = "INSERT INTO users (name, email, password, role, account_status) VALUES (?, ?, ?, 'customer', 'active')";
+        $stmt_insert = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt_insert, 'sss', $customer, $email, $password);
+        mysqli_stmt_execute($stmt_insert);
         $customerId = mysqli_insert_id($conn);
     }
-    $result = mysqli_query($conn, "SELECT car_id FROM cars WHERE CONCAT(brand, ' ', model)='$vehicle'");
-    if(mysqli_num_rows($result) > 0)
+    $stmt2 = mysqli_prepare($conn, "SELECT car_id FROM cars WHERE CONCAT(brand, ' ', model)=?");
+    mysqli_stmt_bind_param($stmt2, 's', $vehicle);
+    mysqli_stmt_execute($stmt2);
+    $result2 = mysqli_stmt_get_result($stmt2);
+    if(mysqli_num_rows($result2) > 0)
     {
-        $row = mysqli_fetch_assoc($result);
+        $row = mysqli_fetch_assoc($result2);
         $carId = $row['car_id'];
     }
     $status = strtolower($status);
