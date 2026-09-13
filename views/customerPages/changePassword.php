@@ -19,7 +19,7 @@ $wrapClass="page-wrap";
 <head>
     <title>Change Password - DriveHub</title>
     <link rel="stylesheet" href="../css/customercngpass.css">
-    <script src="../js/main.js" defer></script>
+    <script src="../js/index.js" defer></script>
 </head>
 
 <body>
