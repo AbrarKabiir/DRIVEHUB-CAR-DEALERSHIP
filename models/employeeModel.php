@@ -315,6 +315,20 @@ function updatePassword($userId, $newPassword)
     return mysqli_stmt_execute($stmt);
 }
 
+function getPasswordHash($userId)
+{
+    $conn = dbConnection();
+    $sql = "SELECT password FROM users WHERE user_id=?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, 'i', $userId);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    if ($row = mysqli_fetch_assoc($result)) {
+        return $row['password'];
+    }
+    return null;
+}
+
 function insertSale($customer, $vehicle, $saleDate, $amount, $status, $employeeId)
 {
     $conn = dbConnection();
