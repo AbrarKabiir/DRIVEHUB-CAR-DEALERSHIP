@@ -58,12 +58,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                 }
                 elseif($user["role"]=="admin")
                 {
-                    header("Location: ../views/adminPages/adminDashboard.php");
+                    header("Location: ../views/overview_admin.php");
                     exit();
                 }
                 elseif($user["role"]=="employee")
                 {
-                    header("Location: ../views/employeePages/employeeDashboard.php");
+                    header("Location: ../views/Employee/overview.php");
                     exit();
                 }
             }
