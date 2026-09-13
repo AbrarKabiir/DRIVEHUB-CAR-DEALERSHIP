@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 08, 2026 at 04:11 PM
+-- Generation Time: Sep 13, 2026 at 06:01 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -45,14 +45,14 @@ CREATE TABLE `cars` (
 --
 
 INSERT INTO `cars` (`car_id`, `brand`, `model`, `year`, `price`, `fuel_type`, `transmission`, `engine`, `image`, `availability_status`) VALUES
-(1, 'Porsche', '911 Carrera S', 2024, 148500, 'Petrol', 'PDK Automatic', '3.0L Twin-Turbo Flat-Six', '', 'available'),
-(2, 'BMW', 'M4 Competition', 2024, 112000, 'Petrol', 'Automatic', '3.0L Twin-Turbo Inline-Six', '', 'available'),
-(3, 'Mercedes-Benz', 'AMG GT 63', 2023, 195000, 'Petrol', 'Automatic', '4.0L Biturbo V8', '', 'sold'),
-(4, 'Audi', 'RS7 Sportback', 2024, 139900, 'Petrol', 'Tiptronic', '4.0L Twin-Turbo V8', '', 'available'),
-(5, 'Ferrari', 'Roma Spider', 2024, 278000, 'Petrol', 'DCT Automatic', '3.9L Twin-Turbo V8', '', 'available'),
-(6, 'Lamborghini', 'Huracan EVO', 2023, 349000, 'Petrol', 'Automatic', '5.2L V10', '', 'sold'),
-(7, 'Range Rover', 'Sport SVR', 2024, 168000, 'Petrol', 'Automatic', '5.0L Supercharged V8', '', 'available'),
-(8, 'Maserati', 'GranTurismo Trofeo', 2024, 223500, 'Petrol', 'Automatic', '3.0L Twin-Turbo V6', '', 'available');
+(1, 'Porsche', '911 Carrera S', 2024, 148500, 'Petrol', 'PDK Automatic', '3.0L Twin-Turbo Flat-Six', 'porshe911.jpg', 'available'),
+(2, 'BMW', 'M4 Competition', 2024, 112000, 'Petrol', 'Automatic', '3.0L Twin-Turbo Inline-Six', 'bmwm4.jpg', 'available'),
+(3, 'Mercedes-Benz', 'AMG GT 63', 2023, 195000, 'Petrol', 'Automatic', '4.0L Biturbo V8', 'amg.jpg', 'sold'),
+(4, 'Audi', 'RS7 Sportback', 2024, 139900, 'Petrol', 'Tiptronic', '4.0L Twin-Turbo V8', 'rs7.jpg', 'available'),
+(5, 'Ferrari', 'Roma Spider', 2024, 188000, 'Petrol', 'DCT Automatic', '3.9L Twin-Turbo V8', 'ferrari.jpg', 'available'),
+(6, 'Lamborghini', 'Huracan EVO', 2023, 183000, 'Petrol', 'Automatic', '5.2L V10', 'lambo.jpg', 'available'),
+(7, 'Range Rover', 'Sport SVR', 2024, 168000, 'Petrol', 'Automatic', '5.0L Supercharged V8', 'rr.jpg', 'available'),
+(8, 'Maserati', 'GranTurismo Trofeo', 2024, 223500, 'Petrol', 'Automatic', '3.0L Twin-Turbo V6', 'maserati.jpg', 'sold');
 
 -- --------------------------------------------------------
 
@@ -148,7 +148,7 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `phone`, `password`, `role`, `a
 (1, 'Admin', 'admin@drivehub.com', '11111111111', '$2y$10$w1/sHgf403vBATl8XVW5BO.oUxzDacOAJCNIOn1OurZYM.1QFQfNi', 'admin', 'active', 'What was the name of your first pet?', '$2y$10$EIY.26HrjA34nvI2UuPU0O6DDZjFIOycZywZwuB62SwF.p5dQt/s6'),
 (2, 'Employee', 'employee@drivehub.com', '22222222222', '$2y$10$mh.PY6dv39xwHJ/JoP15A.yyciq4dQ7gG9xj2iYQbCIASwuh21rRa', 'employee', 'active', 'What city were you born in?', '$2y$10$jGqIIeJVXN5cuWw/snBmmOO.RyehoekTcNnzFb447r6MLdIiH8MdW'),
 (3, 'Customer', 'customer@drivehub.com', '33333333333', '$2y$10$YEP/30H1tLSYGRx/LVujI.sQksYicq6kXdyZkHGcvsfmWRWnY.eoC', 'customer', 'active', 'What was the name of your first pet?', '$2y$10$d8CvNICQaiS9M45gmMeXdOzKn6XaY0vgWl7kVij76tpywcZcEOMda'),
-(4, 'Abrar Kabir', 'akm@a.com', '1111111', '$2y$10$pVjEwUOnJjfoIvWfCVcq1eD200yJ7zjRdVhFon6DZIWxU/DakSfO.', 'customer', 'active', 'What was the name of your first pet?', '$2y$10$lE0vsolLdR8rNvSv4PtV7eIugnz1I58sNlnAjdI4xqwi.mzPNSXNy');
+(4, 'Abrar Kabir', 'akm@a.com', '1111111', '$2y$10$.klClxcRH0vln36SqmPYieoukwrk8L4q02Xbv15T/ja31GpJ7uhfK', 'customer', 'active', 'What was the name of your first pet?', '$2y$10$lE0vsolLdR8rNvSv4PtV7eIugnz1I58sNlnAjdI4xqwi.mzPNSXNy');
 
 --
 -- Indexes for dumped tables
@@ -224,7 +224,7 @@ ALTER TABLE `test_drives`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

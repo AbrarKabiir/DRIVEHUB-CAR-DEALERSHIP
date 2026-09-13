@@ -1,4 +1,13 @@
-<?php // Admin - Overview ?>
+<?php
+session_start();
+
+if(!isset($_SESSION["userId"]) || $_SESSION["role"]!="admin")
+{
+    header("Location: login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +35,7 @@
             <a class="nav-item" href="admin_profile.php">Profile</a>
         </nav>
         <hr class="sidebar-divider bottom-divider">
-        <a class="nav-item logout-btn" href="#">Logout</a>
+        <a class="nav-item logout-btn" href="logout.php">Logout</a>
     </div>
 
     <div class="main-content">
