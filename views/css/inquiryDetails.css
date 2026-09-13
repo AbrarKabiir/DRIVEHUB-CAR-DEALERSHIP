@@ -1,8 +1,3 @@
-/* ==========================================================
-   DriveHub - Inquiry details page
-   This page has its own stylesheet. Nothing is shared.
-   ========================================================== */
-
 * {
     margin: 0;
     padding: 0;
@@ -22,7 +17,63 @@ a {
     text-decoration: none;
 }
 
-/* ---- logo ---- */
+.topnav {
+    height: 72px;
+    background-color: #111113;
+    border-bottom: 1px solid #1f1f23;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    position: relative;
+}
+
+.navleft {
+    display: flex;
+    align-items: center;
+}
+
+.navlinks {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navlinks a {
+    color: #a1a1aa;
+    font-size: 15px;
+    padding: 8px 14px;
+    border-radius: 8px;
+}
+
+.navlinks a.active {
+    color: #f59e0b;
+    background-color: #271f12;
+}
+
+.navright {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.user-block {
+    text-align: right;
+}
+
+.username {
+    font-size: 14px;
+    font-weight: 700;
+    color: #f4f4f5;
+}
+
+.userrole {
+    font-size: 12px;
+    color: #71717a;
+}
 
 .logo {
     display: flex;
@@ -33,11 +84,14 @@ a {
 .logo-emoji {
     width: 34px;
     height: 34px;
+
     background-color: #f59e0b;
     border-radius: 10px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-size: 18px;
 }
 
@@ -52,181 +106,32 @@ a {
     color: #f59e0b;
 }
 
-/* ---- top navigation bar (written into this page) ---- */
-
-.navbar {
-    height: 72px;
-    background-color: #111113;
-    border-bottom: 1px solid #1f1f23;
+.page-wrap {
+    min-height: calc(100vh - 72px);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
-}
-
-.nav-left {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.nav-links a {
-    color: #a1a1aa;
-    font-size: 15px;
-    padding: 8px 14px;
-    border-radius: 8px;
-}
-
-.nav-links a:hover {
-    color: #f4f4f5;
-    background-color: #18181b;
-}
-
-.nav-links a.active {
-    color: #f59e0b;
-    background-color: #271f12;
-}
-
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: #f59e0b;
-    color: #111113;
-    font-size: 13px;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    padding: 40px 20px;
 }
-
-.user-name {
-    font-size: 14px;
-    font-weight: 700;
-    color: #f4f4f5;
-    text-align: right;
-}
-
-.user-role {
-    font-size: 12px;
-    color: #71717a;
-    text-align: right;
-}
-
-/* ---- buttons ---- */
-
-.btn {
-    display: inline-block;
-    padding: 11px 20px;
-    border-radius: 10px;
-    border: 1px solid transparent;
-    font-size: 14px;
-    font-weight: 700;
-    font-family: inherit;
-    cursor: pointer;
-    text-align: center;
-}
-
-.btn-primary {
-    background-color: #f59e0b;
-    color: #111113;
-}
-
-.btn-primary:hover {
-    background-color: #d97706;
-}
-
-.btn-ghost {
-    background-color: transparent;
-    border-color: #27272a;
-    color: #f4f4f5;
-}
-
-.btn-ghost:hover {
-    background-color: #18181b;
-}
-
-.btn-danger {
-    background-color: transparent;
-    border-color: rgba(248, 113, 113, 0.4);
-    color: #f87171;
-}
-
-.btn-small {
-    padding: 7px 14px;
-    font-size: 13px;
-}
-
-.btn-block {
-    display: block;
-    width: 100%;
-}
-
-/* ---- status badges ---- */
-
-.badge {
-    display: inline-block;
-    padding: 5px 12px;
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.badge-available,
-.badge-resolved {
-    background-color: rgba(52, 211, 153, 0.12);
-    color: #34d399;
-}
-
-.badge-sold,
-.badge-rejected {
-    background-color: rgba(248, 113, 113, 0.12);
-    color: #f87171;
-}
-
-.badge-pending {
-    background-color: rgba(245, 158, 11, 0.14);
-    color: #fbbf24;
-}
-
-.badge-approved {
-    background-color: rgba(56, 189, 248, 0.12);
-    color: #38bdf8;
-}
-
-.badge-customer {
-    background-color: rgba(245, 158, 11, 0.14);
-    color: #f59e0b;
-}
-
-/* ---- centred form card ---- */
 
 .modal-card {
     width: 100%;
     max-width: 620px;
-    margin: 30px auto;
     background-color: #111113;
     border: 1px solid #27272a;
     border-radius: 16px;
     padding: 32px;
 }
 
+.modal-center {
+    margin: 30px auto;
+}
+
 .modal-head {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
     margin-bottom: 22px;
 }
 
@@ -242,31 +147,32 @@ a {
     margin-top: 6px;
 }
 
-.modal-close {
-    color: #a1a1aa;
-    font-size: 20px;
-    line-height: 1;
-    background-color: #18181b;
-    border: 1px solid #27272a;
-    border-radius: 8px;
-    padding: 5px 10px;
+.badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
 }
 
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
+.badge-resolved {
+    background-color: rgba(52, 211, 153, 0.12);
+    color: #34d399;
 }
 
-.form-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 24px;
+.badge-rejected {
+    background-color: rgba(248, 113, 113, 0.12);
+    color: #f87171;
 }
 
-.amber {
-    color: #f59e0b;
+.badge-pending {
+    background-color: rgba(245, 158, 11, 0.14);
+    color: #fbbf24;
+}
+
+.badge-approved {
+    background-color: rgba(56, 189, 248, 0.12);
+    color: #38bdf8;
 }
 
 .read-label {
@@ -291,4 +197,29 @@ a {
     background-color: rgba(245, 158, 11, 0.07);
     border: 1px solid rgba(245, 158, 11, 0.35);
     color: #f4f4f5;
+}
+
+.btn {
+    display: inline-block;
+    padding: 11px 20px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #f59e0b;
+    color: #111113;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 10px;
+    margin-top: 24px;
 }

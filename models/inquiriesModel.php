@@ -1,6 +1,6 @@
 <?php
 
-require_once "dbConnect.php";
+require_once __DIR__."/dbConnect.php";
 
 function addInquiry($customerId, $carId, $message)
 {
@@ -28,6 +28,7 @@ function addInquiry($customerId, $carId, $message)
             echo "Error saving inquiry: ".mysqli_error($conn);
             return false;
         }
+
     }
 
     else
@@ -35,7 +36,6 @@ function addInquiry($customerId, $carId, $message)
         echo "connection failed. something went wrong. ";
         return false;
     }
-
 }
 
 function getInquiriesByCustomer($customerId)
