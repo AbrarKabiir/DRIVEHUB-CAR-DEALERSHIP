@@ -98,7 +98,7 @@ else
                         
                         echo "<td><span>" . htmlspecialchars($sale['vehicle']) . "</span>";
                         if ($sale['vehicleSold']) {
-                            echo " <span class='vehicle-sold-text'>Vehicle marked Sold</span>";
+                            echo "<span class='vehicle-sold-text'>Vehicle marked Sold</span>";
                         }
                         echo "</td>";
                         
