@@ -77,7 +77,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST" && $action=="updateProfile")
 
     if($hasErr)
     {
-        $url="../views/account/editProfile.php?nameErr=".urlencode($nameErr)
+        $url="../views/customerPages/editProfile.php?nameErr=".urlencode($nameErr)
             ."&emailErr=".urlencode($emailErr)
             ."&phoneErr=".urlencode($phoneErr);
         header("Location: ".$url);
@@ -90,12 +90,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST" && $action=="updateProfile")
         if($saved)
         {
             $_SESSION["name"]=$name;
-            header("Location: ../views/account/profile.php?success=".urlencode("Profile updated successfully."));
+            header("Location: ../views/customerPages/profile.php?success=".urlencode("Profile updated successfully."));
             exit();
         }
         else
         {
-            header("Location: ../views/account/editProfile.php?nameErr=".urlencode("Could not save your profile. Please try again."));
+            header("Location: ../views/customerPages/editProfile.php?nameErr=".urlencode("Could not save your profile. Please try again."));
             exit();
         }
     }
@@ -144,7 +144,7 @@ else if($_SERVER["REQUEST_METHOD"]=="POST" && $action=="changePassword")
 
     if($hasErr)
     {
-        $url="../views/account/changePassword.php?currentPasswordErr=".urlencode($currentPasswordErr)
+        $url="../views/customerPages/changePassword.php?currentPasswordErr=".urlencode($currentPasswordErr)
             ."&newPasswordErr=".urlencode($newPasswordErr)
             ."&conPasswordErr=".urlencode($conPasswordErr);
         header("Location: ".$url);
@@ -157,12 +157,12 @@ else if($_SERVER["REQUEST_METHOD"]=="POST" && $action=="changePassword")
 
         if($saved)
         {
-            header("Location: ../views/account/profile.php?success=".urlencode("Password updated successfully."));
+            header("Location: ../views/customerPages/profile.php?success=".urlencode("Password updated successfully."));
             exit();
         }
         else
         {
-            header("Location: ../views/account/changePassword.php?newPasswordErr=".urlencode("Could not update the password. Please try again."));
+            header("Location: ../views/customerPages/changePassword.php?newPasswordErr=".urlencode("Could not update the password. Please try again."));
             exit();
         }
     }
@@ -181,14 +181,14 @@ else if($action=="deleteAccount")
     }
     else
     {
-        header("Location: ../views/account/profile.php?formErr=".urlencode("Could not delete the account. You may still have records linked to it."));
+        header("Location: ../views/customerPages/profile.php?formErr=".urlencode("Could not delete the account. You may still have records linked to it."));
         exit();
     }
 }
 
 else
 {
-    header("Location: ../views/account/profile.php");
+    header("Location: ../views/customerPages/profile.php");
     exit();
 }
 

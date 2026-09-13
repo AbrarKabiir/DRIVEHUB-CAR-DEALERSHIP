@@ -51,7 +51,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST" && $action=="send")
 
     if($hasErr)
     {
-        header("Location: ../views/customer/sendInquiry.php?carId=".$carId."&messageErr=".urlencode($messageErr));
+        header("Location: ../views/customerPages/sendInquiry.php?carId=".$carId."&messageErr=".urlencode($messageErr));
         exit();
     }
     else
@@ -60,12 +60,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST" && $action=="send")
 
         if($saved)
         {
-            header("Location: ../views/customer/customerDashboard.php?success=".urlencode("Inquiry submitted. It is now Pending."));
+            header("Location: ../views/customerPages/customerDashboard.php?success=".urlencode("Inquiry submitted. It is now Pending."));
             exit();
         }
         else
         {
-            header("Location: ../views/customer/sendInquiry.php?carId=".$carId."&messageErr=".urlencode("Could not save the inquiry."));
+            header("Location: ../views/customerPages/sendInquiry.php?carId=".$carId."&messageErr=".urlencode("Could not save the inquiry."));
             exit();
         }
     }

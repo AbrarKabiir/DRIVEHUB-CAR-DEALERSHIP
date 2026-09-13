@@ -67,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST" && $action=="request")
 
     if($hasErr)
     {
-        $url="../views/customer/requestTestDrive.php?carId=".$carId
+        $url="../views/customerPages/requestTestDrive.php?carId=".$carId
             ."&dateErr=".urlencode($dateErr)
             ."&timeErr=".urlencode($timeErr);
         header("Location: ".$url);
@@ -79,12 +79,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST" && $action=="request")
 
         if($saved)
         {
-            header("Location: ../views/customer/customerDashboard.php?success=".urlencode("Test drive request submitted. It is now Pending."));
+            header("Location: ../views/customerPages/customerDashboard.php?success=".urlencode("Test drive request submitted. It is now Pending."));
             exit();
         }
         else
         {
-            header("Location: ../views/customer/requestTestDrive.php?carId=".$carId."&dateErr=".urlencode("Could not save the request."));
+            header("Location: ../views/customerPages/requestTestDrive.php?carId=".$carId."&dateErr=".urlencode("Could not save the request."));
             exit();
         }
     }
