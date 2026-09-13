@@ -52,6 +52,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             $hasErr = true;
             $currentPassErr = "Current password cannot be empty";
         }
+        else
+        {
+            $dbHash = getPasswordHash($userId);
+            if(!password_verify($currentPass, $dbHash))
+            {
+                $hasErr = true;
+                $currentPassErr = "Incorrect current password";
+            }
+        }
         if(empty($newPass))
         {
             $hasErr = true;
