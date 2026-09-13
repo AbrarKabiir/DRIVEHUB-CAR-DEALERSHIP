@@ -79,7 +79,7 @@
     
             </div>
 
-            <a href="../logout.php" class="btn btn-secondary btn-small">Logout</a>
+            <a href="../logout.php" class="btn btn-secondary btn-small" style="color: black; background-color:salmon;">Logout</a>
 
         </div>
 
