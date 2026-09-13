@@ -72,7 +72,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             header("Location: ../views/Employee/change_password.php?currentPassErr=".$currentPassErr."&newPassErr=".$newPassErr."&confirmPassErr=".$confirmPassErr);
             exit();
         }
-        updatePassword($userId, $newPass);
+        $hashedPass = password_hash($newPass, PASSWORD_DEFAULT);
+        updatePassword($userId, $hashedPass);
         header("Location: ../views/Employee/profile.php?msg=password_updated");
         exit();
     }
