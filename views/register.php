@@ -2,10 +2,12 @@
 <html>
 
 <head>
+
     <title>Create Account - DriveHub</title>
     <link rel="stylesheet" href="css/register.css">
     <script src="js/registerValidation.js" defer></script>
     <script src="js/index.js" defer></script>
+
 </head>
 
 <body>
@@ -13,11 +15,17 @@
     <div class="register-screen">
 
         <div class="register-left">
+            
+            <a href="landing.php" class="homepage">
 
-            <div class="logo">
-                <div class="logo-emoji">&#128663;</div>
-                <div class="logo-text">DRIVE<span>HUB</span></div>
-            </div>
+                <div class="logo">
+                    <div class="logo-emoji">&#128663;</div>
+                    <div class="logo-text">DRIVE<span>HUB</span></div>
+                </div>
+
+            </a>
+
+            
 
             <div>
 
@@ -46,15 +54,7 @@
                     <a href="register.php" class="tab-link tab-link-active">Create Account</a>
                 </div>
 
-                <div class="reg-title">Create an account</div>
-                <div class="reg-subtitle">Customer registration only. Employees are added by Admin.</div>
-
-                <?php
-                    if(isset($_GET["formErr"]) && $_GET["formErr"]!="")
-                    {
-                        echo '<span class="alert alert-error">'.htmlspecialchars($_GET["formErr"]).'</span>';
-                    }
-                ?>
+                <div class="reg-title">Create an account</div> <br>
 
                 <form action="../controllers/registerControls.php" method="post" onsubmit="return validateRegisterForm()">
 
@@ -64,41 +64,49 @@
                         <input type="text" class="input" id="name" name="name" placeholder="Abrar Kabir">
                         
                         <span class="error-text" id="nameErr">
+
                             <?php
                                 if(isset($_GET["nameErr"]))
                                 {
                                     echo htmlspecialchars($_GET["nameErr"]);
                                 }
                             ?>
+
                         </span>
 
                     </div>
 
                     <div class="form-group">
+
                         <label for="email" class="form-label">Email Address</label>
                         <input type="text" class="input" id="email" name="email" placeholder="you@example.com">
 
                         <span class="error-text" id="emailErr">
+
                             <?php
                                 if(isset($_GET["emailErr"]))
                                 {
                                     echo htmlspecialchars($_GET["emailErr"]);
                                 }
                             ?>
+
                         </span>
+
                     </div>
 
                     <div class="form-group">
                         <label for="phone" class="form-label">Phone Number</label>
-                        <input type="text" class="input" id="phone" name="phone" placeholder="+1 (555) 000-0000">
+                        <input type="text" class="input" id="phone" name="phone" placeholder="+8801XXXXXXXXX">
                         
                         <span class="error-text" id="phoneErr">
+
                             <?php
                                 if(isset($_GET["phoneErr"]))
                                 {
                                     echo htmlspecialchars($_GET["phoneErr"]);
                                 }
                             ?>
+
                         </span>
 
                     </div>
@@ -113,12 +121,14 @@
                         </div>
 
                         <span class="error-text" id="passwordErr">
+
                             <?php
                                 if(isset($_GET["passwordErr"]))
                                 {
                                     echo htmlspecialchars($_GET["passwordErr"]);
                                 }
                             ?>
+
                         </span>
 
                     </div>
@@ -133,12 +143,14 @@
                         </div>
 
                         <span class="error-text" id="conPasswordErr">
+
                             <?php
                                 if(isset($_GET["conPasswordErr"]))
                                 {
                                     echo htmlspecialchars($_GET["conPasswordErr"]);
                                 }
                             ?>
+
                         </span>
 
                     </div>
@@ -155,12 +167,14 @@
                         </select>
 
                         <span class="error-text" id="securityQuestionErr">
+
                             <?php
                                 if(isset($_GET["securityQuestionErr"]))
                                 {
                                     echo htmlspecialchars($_GET["securityQuestionErr"]);
                                 }
                             ?>
+
                         </span>
 
                     </div>
@@ -171,12 +185,14 @@
                         <input type="text" class="input" id="securityAnswer" name="securityAnswer" placeholder="Used to recover your password">
                         
                         <span class="error-text" id="securityAnswerErr">
+
                             <?php
                                 if(isset($_GET["securityAnswerErr"]))
                                 {
                                     echo htmlspecialchars($_GET["securityAnswerErr"]);
                                 }
                             ?>
+
                         </span>
 
                     </div>

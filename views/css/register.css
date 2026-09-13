@@ -22,8 +22,6 @@ a {
     min-height: 100vh;
 }
 
-
-
 .register-left {
     width: 57%;
     background-color: #0d0d0f;
@@ -67,7 +65,6 @@ a {
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 2px;
-    text-transform: uppercase;
     margin-bottom: 10px;
 }
 
@@ -75,7 +72,6 @@ a {
     font-size: 54px;
     font-weight: 800;
     line-height: 1.05;
-    letter-spacing: -1.5px;
     color: #ffffff;
     margin-bottom: 12px;
 }
@@ -133,15 +129,7 @@ a {
 .reg-title {
     font-size: 30px;
     font-weight: 800;
-    letter-spacing: -0.5px;
     color: #ffffff;
-}
-
-.reg-subtitle {
-    color: #a1a1aa;
-    font-size: 14px;
-    margin-top: 6px;
-    margin-bottom: 24px;
 }
 
 .form-group {
@@ -170,11 +158,6 @@ a {
     color: #52525b;
 }
 
-.input:focus {
-    outline: none;
-    border-color: #f59e0b;
-}
-
 .select {
     width: 100%;
     background-color: #18181b;
@@ -183,11 +166,6 @@ a {
     padding: 12px 14px;
     color: #f4f4f5;
     font-size: 14px;
-}
-
-.select:focus {
-    outline: none;
-    border-color: #f59e0b;
 }
 
 .pass-wrap {
@@ -211,7 +189,7 @@ a {
 
 
 .error-text {
-    display: relative;
+    position: relative;
     color: #f87171;
     font-size: 13px;
     margin-top: 6px;
@@ -235,7 +213,7 @@ a {
     display: inline-block;
     padding: 11px 20px;
     border-radius: 10px;
-    border: 1px solid transparent;
+    border: 1px solid;
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
@@ -249,7 +227,7 @@ a {
 
 
 .btn-block {
-    display: relative;
+    position: relative;
     width: 100%;
 }
 

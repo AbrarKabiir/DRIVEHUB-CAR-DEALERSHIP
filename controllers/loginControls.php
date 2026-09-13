@@ -53,7 +53,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
                 if($user["role"]=="customer")
                 {
-                    header("Location: ../views/customerPages/customerDashboard.php");
+                    header("Location: ../views/customerPages/vehicles.php");
                     exit();
                 }
                 elseif($user["role"]=="admin")

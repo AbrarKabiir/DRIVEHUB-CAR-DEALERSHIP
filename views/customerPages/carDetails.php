@@ -36,7 +36,6 @@
 
 <body>
 
-
     <div class="topnav">
 
         <div class="navleft">
@@ -151,7 +150,7 @@
                         <div class="spec-label">Availability</div>
                         <div class="spec-value"><?php echo ucfirst($car["availability_status"]); ?></div>
                     </div>
-                    
+
                 </div>
 
                 <div class="details-cta">
